@@ -27,4 +27,10 @@ public class RoleServiceImpl implements RoleService {
     public List<Role> allRoles() {
         return roleRepo.findAll();
     }
+
+    @Override
+    public ResponseEntity<String> updateRole(Long id) {
+        return new ResponseEntity<String>("Role updated successfully");
+
+    }
 }

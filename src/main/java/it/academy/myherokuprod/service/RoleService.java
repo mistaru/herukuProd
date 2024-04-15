@@ -10,4 +10,6 @@ public interface RoleService {
 
     List<Role> allRoles();
 
+    ResponseEntity<String> updateRole(Long id);
+
 }
