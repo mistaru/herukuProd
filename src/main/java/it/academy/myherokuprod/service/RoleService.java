@@ -8,6 +8,8 @@ import java.util.List;
 public interface RoleService {
     ResponseEntity<Long> save(Role role);
 
+    String save2 (Role role);
+
     List<Role> allRoles();
 
 }
