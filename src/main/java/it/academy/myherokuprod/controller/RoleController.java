@@ -30,4 +30,9 @@ public class RoleController {
         List<Role> roles = service.allRoles();
         return new ResponseEntity<>(roles, HttpStatus.OK);
     }
+    @GetMapping("/getById/V2")
+    public ResponseEntity<Role> getById(Long id) {
+        Role role = service.getById(id);
+        return  new ResponseEntity<>(role,HttpStatus.OK);
+    }
 }
