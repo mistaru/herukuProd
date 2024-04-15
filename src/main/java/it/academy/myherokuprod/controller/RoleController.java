@@ -30,4 +30,9 @@ public class RoleController {
         List<Role> roles = service.allRoles();
         return new ResponseEntity<>(roles, HttpStatus.OK);
     }
+
+    @PostMapping("/create/v2")
+    public ResponseEntity<Long> createRole(@RequestBody Role roleDto){
+        return service.create(roleDto);
+    }
 }

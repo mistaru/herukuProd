@@ -24,6 +24,12 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    public ResponseEntity<Long> create(Role role) {
+        Role createRole = roleRepo.createRole(role);
+        return new ResponseEntity<>(createRole.getId(), HttpStatus.CREATED);
+    }
+
+    @Override
     public List<Role> allRoles() {
         return roleRepo.findAll();
     }
