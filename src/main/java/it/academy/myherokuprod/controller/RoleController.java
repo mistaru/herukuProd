@@ -24,7 +24,10 @@ public class RoleController {
     public ResponseEntity<Long> save(@RequestBody Role roleDto) {
         return service.save(roleDto);
     }
-
+    @PostMapping("/create/v2")
+    public ResponseEntity<Long> create (@RequestBody Role role){
+        return service.save(role);
+    }
     @GetMapping("/getAll")
     public ResponseEntity<List<Role>> getAll() {
         List<Role> roles = service.allRoles();
