@@ -1,5 +1,6 @@
 package it.academy.myherokuprod.service;
 
+import it.academy.myherokuprod.dto.RoleDto;
 import it.academy.myherokuprod.entity.Role;
 import org.springframework.http.ResponseEntity;
 
@@ -9,5 +10,7 @@ public interface RoleService {
     ResponseEntity<Long> save(Role role);
 
     List<Role> allRoles();
+
+    Role findById(Long id);
 
 }
