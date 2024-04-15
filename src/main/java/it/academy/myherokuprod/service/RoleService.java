@@ -9,5 +9,6 @@ public interface RoleService {
     ResponseEntity<Long> save(Role role);
 
     List<Role> allRoles();
+    String delete(Long id);
 
 }
