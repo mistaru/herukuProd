@@ -12,6 +12,8 @@ public interface RoleService {
 
     List<Role> allRoles();
 
+    long deleteById(Long id);
+
     Role getById(Long Id);
 
 

@@ -6,10 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +35,10 @@ public class RoleController {
     public ResponseEntity<Role> getById(Long id) {
         Role role = service.getById(id);
         return  new ResponseEntity<>(role,HttpStatus.OK);
+    }
+
+    @PostMapping("/delete/v2{id}")
+    public ResponseEntity<Long>deleteV2(@PathVariable Long id){
+        return ResponseEntity.ok(service.deleteById(id));
     }
 }
