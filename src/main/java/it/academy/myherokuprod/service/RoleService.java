@@ -10,4 +10,6 @@ public interface RoleService {
 
     List<Role> allRoles();
 
+    Role update (Role roleToUpdate);
+
 }

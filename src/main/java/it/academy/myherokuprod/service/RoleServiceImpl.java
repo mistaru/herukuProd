@@ -27,4 +27,12 @@ public class RoleServiceImpl implements RoleService {
     public List<Role> allRoles() {
         return roleRepo.findAll();
     }
+
+    @Override
+    public Role update(Role roleToUpdate) {
+        Role role = roleRepo.findById(roleToUpdate.getId()).orElseThrow(()->new NullPointerException(" Role is not found"));
+        role.setName(roleToUpdate.getName());
+        roleRepo.save(role);
+        return role;
+    }
 }
