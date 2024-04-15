@@ -27,4 +27,11 @@ public class RoleServiceImpl implements RoleService {
     public List<Role> allRoles() {
         return roleRepo.findAll();
     }
+
+    @Override
+    public String delete(Long id) {
+        Role role = roleRepo.findById(id).orElseThrow(()-> new NullPointerException("Role is not found"));
+        roleRepo.deleteById(id);
+        return "Role has been deleted successfully";
+    }
 }
