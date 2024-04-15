@@ -27,4 +27,13 @@ public class RoleServiceImpl implements RoleService {
     public List<Role> allRoles() {
         return roleRepo.findAll();
     }
+
+    @Override
+    public Role findById(Long id) {
+        Role role = roleRepo.findById(id).orElse(null);
+        if (role == null) {
+            throw new EntityNotFoundException("Роль не найдена");
+        }
+        return role;
+    }
 }
