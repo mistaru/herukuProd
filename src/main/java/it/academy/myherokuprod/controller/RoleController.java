@@ -21,11 +21,20 @@ public class RoleController {
     public ResponseEntity<Long> save(@RequestBody Role roleDto) {
         return service.save(roleDto);
     }
+@PostMapping("/create/save2")
+    public String save2(Role role) {
+        return service.save2(role);
+    }
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Role>> getAll() {
         List<Role> roles = service.allRoles();
         return new ResponseEntity<>(roles, HttpStatus.OK);
+    }
+    @GetMapping("/getById/V2")
+    public ResponseEntity<Role> getById(Long id) {
+        Role role = service.getById(id);
+        return  new ResponseEntity<>(role,HttpStatus.OK);
     }
 
     @PostMapping("/delete/v2{id}")

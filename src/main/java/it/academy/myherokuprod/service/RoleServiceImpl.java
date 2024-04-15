@@ -21,18 +21,17 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    public String save2(Role role) {
+        return roleRepo.save(role).getName();
+    }
+
+    @Override
     public List<Role> allRoles() {
         return roleRepo.findAll();
     }
 
     @Override
-    public long deleteById(Long id) {
-        if (id!=null){
-            ResponseEntity.ok("Id:"+ id +" Успешно удален");
-             roleRepo.deleteById(id);
-        }
-        else
-            ResponseEntity.badRequest().body("Error" + -1L);
-   return 200L;
+    public Role getById(Long id) {
+        return roleRepo.findById(id).get();
     }
 }
